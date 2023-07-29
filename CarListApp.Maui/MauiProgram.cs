@@ -20,6 +20,7 @@ public static class MauiProgram
 
 		var stringPath = Path.Combine(FileSystem.AppDataDirectory, "cars.db3");
 		builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<CarService>(s, stringPath));
+		builder.Services.AddTransient<CarApiService>();
 
 		builder.Services.AddSingleton<CarListViewModel>();
 		builder.Services.AddTransient<CarDetailsViewModel>();
